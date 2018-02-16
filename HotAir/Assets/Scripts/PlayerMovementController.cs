@@ -30,17 +30,18 @@ public class PlayerMovementController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        float upwardsMove = Input.GetAxis("Vertical");
+        //float upwardsMove = Input.GetAxis("Vertical");
         float sidewaysMove = Input.GetAxis("Horizontal");
 
 
         Vector3 newPos = transform.position;
         newPos.x += sidewaysMove;
-        newPos.y += upwardsMove;
+        //newPos.y += upwardsMove;
 
-        if(CheckInBounds(newPos))
+        /*if(CheckInBounds(newPos))
         {
-            transform.position = newPos;
-        }
+            
+        }*/
+        transform.position = newPos;
     }
 }

@@ -6,7 +6,7 @@ public class BalloonManager : MonoBehaviour {
 
     float height;
     float verticalVel;
-
+    public float horizontalVel;
 
     const float vertVelDecrementRate = 0.5f;
     const float vertVelMin = -5f;
@@ -50,6 +50,12 @@ public class BalloonManager : MonoBehaviour {
         }
 
         height += (verticalVel * Time.deltaTime);
+
+        Vector3 newPos = transform.position;
+        newPos.y = height;
+        newPos.x += (horizontalVel * Time.deltaTime);
+        transform.position = newPos;
+
         CheckForGameOver();
 
         GameObject.Find("EventSystem").GetComponent<UIManager>().UpdateHeight(height);

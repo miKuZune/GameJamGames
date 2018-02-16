@@ -17,6 +17,7 @@ public class Pulley : MonoBehaviour {
         {
             if(Input.GetKeyDown(KeyCode.E))
             {
+                GameObject.Find("Fire").GetComponent<FireHandler>().FireOn();
                 GameObject.Find("Balloon").GetComponent<BalloonManager>().SetVerticalVel(5);
                 GameObject.Find("EventSystem").GetComponent<UIManager>().HideEButton();
                 canPull = false;
